@@ -8,7 +8,8 @@ const user: User = {
   name: 'Steve',
   id: 1
 }
-// // incorrect form of declaring object with interface defined above
+// incorrect form of declaring object with interface defined above
+
 // const incorrectUser: User = {
 //   userName: 'Steve',
 //   id: 1
@@ -19,30 +20,40 @@ function getUser(user): User {
   return null
 }
 
-getUser(user)
+getUser({ name: "Steve", id: 1})
 
-// Let's see if optional property is printed
+// This is narrowing
 
-
-// function printName(obj: { first: string; last?: string }) {
-//   // Error - might crash if 'obj.last' wasn't provided!
-//   console.log(obj.last.toUpperCase());
-
-//   // A safe alternative using modern JavaScript syntax:
-//   console.log(obj.last?.toUpperCase());
-// }
-
-// printName({ first: "Bob" });
-// printName({ first: "Alice", last: "Alisson" });
-
-interface Anything {
-  first: string,
-  last?: string
+interface Props {
+  string?: string,
+  array?: string[]
+  null?: null
 }
 
-const optional: Anything = {
-  first: 'hello world'
+const string: Props = {
+  string: 'hello world'
 }
 
-console.log(optional.first)
-console.log(optional.last)
+const array: Props = {
+  array: ['h', 'e', 'l', 'l', 'o']
+}
+
+
+function printAll(strs: string | string[] | null) {
+  if (strs !== null) {
+    if (typeof strs === "object") {
+      for (const s of strs) {
+//                    ^ = (parameter) strs: string[]
+        console.log(s);
+      }
+    } else if (typeof strs === "string") {
+      console.log(strs);
+    //            ^ = (parameter) strs: string
+    }
+  }
+}
+const printString = printAll(string.string)
+const printArray = printAll(array.array)
+
+console.log(printArray)
+console.log(printString)
