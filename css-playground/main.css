@@ -1,0 +1,81 @@
+/* This is the start of flex layout learning*/
+
+.flex-container {
+    border: solid 1px black;
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    color: aqua;
+}
+
+.a {
+    border: solid 1px orange;
+    background: orange;
+    text-align: center;
+    height: 50px;
+    width: 50px;
+}
+
+.b {
+    border: solid 1px blue;
+    background: blue;
+    height: 50px;
+    width: 50px;
+}
+
+.c {
+    border: solid 1px green;
+    background: green;
+    height: 50px;
+    width: 50px;
+}
+
+.d {
+    border: solid 1px palevioletred;
+    background: palevioletred;
+    height: 50px;
+    width: 50px;
+}
+
+
+/* This is the start of grid layout learning*/
+
+.grid-container {
+    border: solid 1px black;
+    height: 500px;
+    width: 500px;
+    display: grid;
+    color: aqua;
+}
+
+.e {
+    border: solid 1px orange;
+    background: orange;
+    height: 50px;
+    width: 50px;
+}
+
+.f {
+    border: solid 1px blue;
+    background: blue;
+    height: 50px;
+    width: 50px;
+}
+
+.g {
+    border: solid 1px green;
+    background: green;
+    height: 50px;
+    width: 50px;
+}
+
+.h {
+    border: solid 1px palevioletred;
+    background: palevioletred;
+    height: 50px;
+    width: 50px;
+}
