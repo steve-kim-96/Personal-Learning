@@ -1,5 +1,6 @@
 import TodoListItem from './TodoListItem'
 import todoList from '../../lib/todo'
+import './TodoList.scss'
 import React from 'react'
 
 interface Props {

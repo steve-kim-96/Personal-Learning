@@ -1,11 +1,8 @@
-$main-color : red;
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
-
-h2{
-  color:$main-color;
-  font-size: 20px;
-  font-family: 'Indie Flower';
-}
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+$main-color :#2ec9c2;
+$indie-flower: 'Indie Flower', serif;
+$shadows-into-light: 'Shadows Into Light';
 
 .App{
   display: flex;
@@ -14,7 +11,16 @@ h2{
   align-items: center;
   h2{
     text-align: center;
+    color:$main-color;
+    font-size: 20px;
+    font-family: $shadows-into-light;
   }
+}
+
+.todo-count{
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #faae20;
 }
 
 .form{
@@ -32,6 +38,7 @@ h2{
   button{
     border-radius: 10%;
     flex-grow: 1;
+    font-family: $indie-flower;
    }
 }
 

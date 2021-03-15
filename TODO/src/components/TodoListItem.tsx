@@ -1,4 +1,5 @@
 import todoListItem from '../../lib/todo'
+import './TodoListItem.scss'
 import React from 'react'
 
 export default function TodoListItem({ id, name, complete, toggleTodo }: todoListItem) {
@@ -10,7 +11,7 @@ export default function TodoListItem({ id, name, complete, toggleTodo }: todoLis
   return (
     <div className='todo-item'>
       {name}
-      <input type="checkbox" checked={complete} onChange={handleTodoClick}/>
+      <input className='checkbox' type="checkbox" checked={complete} onChange={handleTodoClick}/>
     </div>
   )
 }

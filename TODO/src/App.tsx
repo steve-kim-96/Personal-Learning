@@ -42,7 +42,7 @@ function App() {
   return (
     <div className="App">
       <div className='form'>
-        <h2><span className='todo-count'>{todos.length}</span> Todos left</h2>
+        <h2>Todos left: <span className='todo-count'>{todos.length}</span></h2>
         <input ref={inputField} type="text" placeholder='Todo goes here'/>
         <div className="btn-box">
           <button className='add-todo' onClick={todoSubmit}>Add Todo</button>
