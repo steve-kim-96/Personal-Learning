@@ -2,7 +2,7 @@ interface todo {
   id?: string,
   name: string,
   complete: true | false,
-  toggleTodo?: React.ChangeEventHandler<HTMLInputElement>
+  toggleTodo?: any
 }
 
 export default todo

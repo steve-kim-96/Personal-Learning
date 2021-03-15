@@ -29,9 +29,18 @@ function App() {
     if (!name) return
     setTodos(prevTodos => [...prevTodos, { id: uuid, name: name, complete: false }])
   }
+
+  function toggleTodo () {
+    const newTodos = [...todos]
+    const todo = newTodos.find(todo => todo.id === uuid)
+    if (!todo) return
+    todo.complete = !todo.complete
+    setTodos(newTodos)
+  }
+
   return (
     <div className="App">
-      <TodoList items={todos} />
+      <TodoList items={todos} toggleTodo={toggleTodo}/>
       <div className='form'>
         <h2>0 Todos left</h2>
         <input ref={inputField} type="text" />

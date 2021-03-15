@@ -3,15 +3,16 @@ import todoList from '../../lib/todo'
 import React from 'react'
 
 interface Props {
-  items?: todoList[]
+  items?: todoList[],
+  toggleTodo?: any
 }
 
 
-export default function TodoList({ items = [] }: Props) {
+export default function TodoList({ items = [], toggleTodo }: Props) {
   return (
     <div>
-      {items.map(({ id, name, complete, toggleTodo }) => (
-        <TodoListItem key={id} id={id} name={name} complete={complete} toggleTodo={toggleTodo}/>
+      {items.map(({ id, name, complete }) => (
+        <TodoListItem key={id} id={id} name={name} complete={complete} toggleTodo={toggleTodo} />
       ))}
     </div>
   )
