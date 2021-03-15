@@ -1,7 +1,8 @@
 interface todo {
-  id?: number,
+  id?: string,
   name: string,
-  complete: true | false
+  complete: true | false,
+  toggleTodo?: React.ChangeEventHandler<HTMLInputElement>
 }
 
 export default todo
