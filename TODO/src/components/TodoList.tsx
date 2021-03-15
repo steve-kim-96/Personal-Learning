@@ -10,7 +10,7 @@ interface Props {
 
 export default function TodoList({ items = [], toggleTodo }: Props) {
   return (
-    <div>
+    <div className='todo-list'>
       {items.map(({ id, name, complete }) => (
         <TodoListItem key={id} id={id} name={name} complete={complete} toggleTodo={toggleTodo} />
       ))}

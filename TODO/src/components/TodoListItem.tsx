@@ -8,7 +8,7 @@ export default function TodoListItem({ id, name, complete, toggleTodo }: todoLis
     toggleTodo(id)
   }
   return (
-    <div>
+    <div className='todo-item'>
       {name}
       <input type="checkbox" checked={complete} onChange={handleTodoClick}/>
     </div>

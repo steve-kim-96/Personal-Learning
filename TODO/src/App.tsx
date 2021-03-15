@@ -1,6 +1,7 @@
-import TodoList from './components/TodoList';
+import TodoList from './components/TodoList'
 import { v4 } from 'uuid'
-import React, { useState, useEffect } from 'react';
+import './App.scss'
+import React, { useState, useEffect } from 'react'
 
 const LOCAL_STORAGE_KEY = 'todoApp.todos'
 
@@ -30,7 +31,7 @@ function App() {
     setTodos(prevTodos => [...prevTodos, { id: uuid, name: name, complete: false }])
   }
 
-  function toggleTodo () {
+  function toggleTodo() {
     const newTodos = [...todos]
     const todo = newTodos.find(todo => todo.id === uuid)
     if (!todo) return
@@ -40,13 +41,15 @@ function App() {
 
   return (
     <div className="App">
-      <TodoList items={todos} toggleTodo={toggleTodo}/>
       <div className='form'>
-        <h2>0 Todos left</h2>
-        <input ref={inputField} type="text" />
-        <button onClick={todoSubmit}>Add Todo</button>
-        <button>Clear Todo</button>
+        <h2><span className='todo-count'>{todos.length}</span> Todos left</h2>
+        <input ref={inputField} type="text" placeholder='Todo goes here'/>
+        <div className="btn-box">
+          <button className='add-todo' onClick={todoSubmit}>Add Todo</button>
+          <button className='clear todos'>Clear Todo</button>
+        </div>
       </div>
+      <TodoList items={todos} toggleTodo={toggleTodo} />
     </div>
   );
 }
