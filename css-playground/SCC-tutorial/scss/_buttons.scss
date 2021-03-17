@@ -1,0 +1,22 @@
+// doesnt matter what I call this as long as it's extended to my classes
+%bton {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 8px 20px;
+  margin: 3px;
+  &:hover {
+    transform: scale(.98)
+  }
+}
+
+// classes defined in html doc
+.btn-primary {
+  @extend %bton;
+  @include set-background(lighten($primary-color, 10%));
+  
+}
+
+.btn-secondary {
+  @extend %bton;
+  @include set-background($secondary-color);
+}

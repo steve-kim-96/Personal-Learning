@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@500&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.showcase {
+  background-color: #f2edd7;
+  color: set-text-color(#f2edd7);
+  height: 450px;
+  padding: 5px 20px;
+}
+
+.showcase nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.showcase nav ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.showcase nav li {
+  padding: 15px;
+}
+
+.showcase nav h1 {
+  font-family: "Cormorant Unicase";
+  color: set-text-color(#3a6351);
+}
+
+.showcase a {
+  text-decoration: none;
+}
+
+.showcase-content {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+/*# sourceMappingURL=style.css.map */

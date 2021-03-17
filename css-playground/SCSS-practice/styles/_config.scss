@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@500&display=swap');
+
+$header-font-family: "Cormorant Unicase";
+$title-font-color: #3a6351;
+$background-color: #f2edd7;
+
+@mixin set-background-color($color) {
+  background-color: $color;
+  color: set-text-color($color)
+}

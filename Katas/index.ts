@@ -27,14 +27,40 @@ const nums1 = [1, 2, 3, 0, 0, 0]
 const nums2 = [1, 2, 3, 4, 5, 0]
 function merge(nums1: number[], m: number, nums2: number[], n: number): void {
 	// delete the last m elements in nums and insert the first n elements of nums2 into num1
-	console.log(nums1.splice(m, nums1.length, ...nums2.slice(0, n)))
 	// sort nums1 in ascending form
 	nums1.sort((a, b) => a - b)
-    // console.log(nums1)
 };
-
-merge(nums1, 3, nums2, 5)
 
 // for each item in nums2 push the element into nums1 array as long as the number is not 0
 // go into nums1 and foreach element that equals zero splice
 // then sort the array
+
+
+// For each element in the array, if the element is equal to the value then remove it in place and return the new length of the array
+const array = [0,1,2,2,3,0,4,2]
+const value = 2
+
+function removeElement(nums: number[], val: number): number {
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] === val) {
+            nums.splice(i, 1)
+            i--
+        }
+    }
+    return nums.length
+};
+
+
+// Remove duplicates in the array IN PLACE so that each value only appears once, and return the new length
+const nums = [0,0,1,1,1,2,2,3,3,4]
+
+function removeDuplicates(nums: number[]): number {
+    nums.reduce((acc, cv) => {
+       return nums.some(e => e === cv) ? acc : cv
+    }, [])
+    return nums.length
+};
+
+// run through the array with forEach or for loop
+// since it's a sorted array if spliced it will skip the next number
+// but i need to know if that number exists more than once
