@@ -1,49 +1,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import 'config';
 $main-color :#2ec9c2;
 $indie-flower: 'Indie Flower', serif;
 $shadows-into-light: 'Shadows Into Light';
 
-.App{
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#root{
+  height: 300px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-content: center;
+  background-color: #eeebdd;
+
+  .form{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    input{
+      border-radius: 5%;
+    }
+  }
+
+  .todo-count{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #faae20;
+  }
+  
   h2{
     text-align: center;
     color:$main-color;
     font-size: 20px;
     font-family: $shadows-into-light;
   }
-}
 
-.todo-count{
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #faae20;
-}
-
-.form{
-  display: flex;
-  flex-direction: column;
-  width: 15%;
-  input{
-    border-radius: 5%;
+  .btn-box{
+    display: flex;
+    justify-content: center;
+    button{
+      border-radius: 10%;
+      flex-grow: 1;
+      font-family: $indie-flower;
+     }
   }
-}
+  
+  button:hover,
+  button:focus {
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.25em);
+    background-color: #faae20;
+    cursor: pointer;
+  }
 
-.btn-box{
-  display: flex;
-  justify-content: center;
-  button{
-    border-radius: 10%;
-    flex-grow: 1;
-    font-family: $indie-flower;
-   }
-}
-
-button:hover,
-button:focus {
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateY(-0.25em);
+  .todo-list {
+    width: 150px;
+  }
 }
