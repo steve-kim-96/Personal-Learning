@@ -1,11 +1,11 @@
 // // function is for duplicating zeros where i is zero and shifting the array to the right dependent on the amount of zeros added.
 
-const input = [1,0,2,3,0,4,5,0]
+const input = [1, 0, 2, 3, 0, 4, 5, 0]
 
 function duplicateZeros(arr: number[]): void {
     const oldInputLength = arr.length
     for (let i = 0; i < arr.length; i++) {
-        if (!arr[i]){
+        if (!arr[i]) {
             arr.splice(i, 0, 0)
             i++
             arr.splice(oldInputLength - arr.length)
@@ -26,9 +26,9 @@ function duplicateZeros(arr: number[]): void {
 const nums1 = [1, 2, 3, 0, 0, 0]
 const nums2 = [1, 2, 3, 4, 5, 0]
 function merge(nums1: number[], m: number, nums2: number[], n: number): void {
-	// delete the last m elements in nums and insert the first n elements of nums2 into num1
-	// sort nums1 in ascending form
-	nums1.sort((a, b) => a - b)
+    // delete the last m elements in nums and insert the first n elements of nums2 into num1
+    // sort nums1 in ascending form
+    nums1.sort((a, b) => a - b)
 };
 
 // for each item in nums2 push the element into nums1 array as long as the number is not 0
@@ -37,7 +37,7 @@ function merge(nums1: number[], m: number, nums2: number[], n: number): void {
 
 
 // For each element in the array, if the element is equal to the value then remove it in place and return the new length of the array
-const array = [0,1,2,2,3,0,4,2]
+const array = [0, 1, 2, 2, 3, 0, 4, 2]
 const value = 2
 
 function removeElement(nums: number[], val: number): number {
@@ -52,15 +52,44 @@ function removeElement(nums: number[], val: number): number {
 
 
 // Remove duplicates in the array IN PLACE so that each value only appears once, and return the new length
-const nums = [0,0,1,1,1,2,2,3,3,4]
+const nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
 
 function removeDuplicates(nums: number[]): number {
-    nums.reduce((acc, cv) => {
-       return nums.some(e => e === cv) ? acc : cv
-    }, [])
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] === nums[i + 1]) {
+            nums.splice(i, 1)
+            i--
+        }
+    }
     return nums.length
 };
+
 
 // run through the array with forEach or for loop
 // since it's a sorted array if spliced it will skip the next number
 // but i need to know if that number exists more than once
+
+
+// Need to check if the next element is the current element * 2
+const arr1 = [10, 2, 5, 3]
+const arr2 = [3, 1, 7, 11]
+
+function checkIfExist(arr: number[]): boolean {
+    let confirmation;
+    arr.sort((a, b) => a - b)
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i; j < arr.length; j++) {
+            if (arr[i] * 2 === arr[j]) {
+                confirmation = true;
+            } else {
+                confirmation = false;
+            }
+        }
+    }
+    return confirmation
+};
+
+console.log(checkIfExist(arr1))
+// Need to go through the array
+// I could sort the array first to make it easy
+// Then I could save the value of the element and check if any subsequent elements is 2* that element

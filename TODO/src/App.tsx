@@ -31,9 +31,14 @@ function App() {
     setTodos(prevTodos => [...prevTodos, { id: uuid, name: name, complete: false }])
   }
 
-  function toggleTodo() {
+  function handleClearTodos() {
+    const newTodos = todos.filter(todo => !todo.complete)
+    setTodos(newTodos)
+  }
+
+  function toggleTodo(id: string) {
     const newTodos = [...todos]
-    const todo = newTodos.find(todo => todo.id === uuid)
+    const todo = newTodos.find(todo => todo.id === id)
     if (!todo) return
     todo.complete = !todo.complete
     setTodos(newTodos)
@@ -43,10 +48,10 @@ function App() {
     <div className="App">
       <div className='form'>
         <h2>Todos left: <span className='todo-count'>{todos.length}</span></h2>
-        <input ref={inputField} type="text" placeholder='Todo goes here'/>
+        <input ref={inputField} type="text" placeholder='Todo goes here' />
         <div className="btn-box">
           <button className='add-todo' onClick={todoSubmit}>Add Todo</button>
-          <button className='clear todos'>Clear Todo</button>
+          <button className='clear todos' onClick={handleClearTodos}>Clear Todo</button>
         </div>
       </div>
       <TodoList items={todos} toggleTodo={toggleTodo} />
