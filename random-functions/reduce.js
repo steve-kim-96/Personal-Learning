@@ -56,7 +56,43 @@ function groupByProp(arrObject, property) {
     acc[key].push(cv)
     return acc
   }, {})
-  console.log(grouped)
+  return grouped
 }
 
 groupByProp(people, 'age')
+
+// Bonding arrays contained in an array of objects using the spread operator and CV
+/* 
+  // acc is an array.
+  // each iteration of cv is an object and cv.books is an array of books.
+  // spread operator makes a copy of acc and cv.books and merges.
+  // end result is accumulation of all books. can add books by adding titles
+    inside accumulator array
+
+*/
+const friends = [
+  {
+    name: 'Anna',
+    books: ['Bible', 'Harry Potter'],
+    age: 21
+  }, {
+    name: 'Bob',
+    books: ['War and peace', 'Romeo and Juliet'],
+    age: 26
+  }, {
+    name: 'Alice',
+    books: ['The Lord of the Rings', 'The Shining'],
+    age: 18
+  }
+]
+
+let allBooks = friends.reduce((acc, cv) => [...acc, ...cv.books],['Alphabet'])
+
+// remove duplicates from an array
+const myArray = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd']
+
+const noDupes = myArray.reduce((acc, cv) => {
+  return acc.some(e => e === cv) ? acc : [...acc,  cv]
+}, [])
+
+console.log(noDupes)
