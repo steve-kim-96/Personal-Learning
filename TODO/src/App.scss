@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
-@import 'config';
-$main-color :#2ec9c2;
-$indie-flower: 'Indie Flower', serif;
-$shadows-into-light: 'Shadows Into Light';
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+@import "config";
+$main-color: #2ec9c2;
+$indie-flower: "Indie Flower", serif;
+$shadows-into-light: "Shadows Into Light";
 
 * {
   box-sizing: border-box;
@@ -11,43 +11,49 @@ $shadows-into-light: 'Shadows Into Light';
   padding: 0;
 }
 
-#root{
+#root {
   background-color: #eeebdd;
   height: 300px;
   display: flex;
   justify-content: center;
-  .form{
+  .form {
     position: sticky;
-    input{
-      border-radius: 5%;
+    input {
+      border-radius: 5px;
+      width: 400px;
+      height: 50px;
     }
   }
   .todo-list {
-    width: 150px;
+    width: 400px;
+    margin-top: 10px;
+    height: 30px;
+    border-radius: 5px;
   }
-  .todo-count{
+  .todo-count {
     font-size: 1.5em;
     font-weight: bold;
     color: #faae20;
   }
-  
-  h2{
+
+  h2 {
     text-align: center;
-    color:$main-color;
-    font-size: 20px;
+    color: $main-color;
+    font-size: 30px;
     font-family: $shadows-into-light;
   }
 
-  .btn-box{
+  .btn-box {
     display: flex;
     justify-content: center;
-    button{
-      border-radius: 10%;
+    button {
+      border-radius: 5px;
       flex-grow: 1;
       font-family: $indie-flower;
-     }
+      height: 30px;
+    }
   }
-  
+
   button:hover,
   button:focus {
     box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
@@ -55,6 +61,4 @@ $shadows-into-light: 'Shadows Into Light';
     background-color: #faae20;
     cursor: pointer;
   }
-
-
 }
