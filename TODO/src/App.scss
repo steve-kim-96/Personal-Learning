@@ -12,21 +12,19 @@ $shadows-into-light: 'Shadows Into Light';
 }
 
 #root{
+  background-color: #eeebdd;
   height: 300px;
   display: flex;
   justify-content: center;
-  align-content: center;
-  background-color: #eeebdd;
-
   .form{
-    display: flex;
-    flex-direction: column;
-    position: fixed;
+    position: sticky;
     input{
       border-radius: 5%;
     }
   }
-
+  .todo-list {
+    width: 150px;
+  }
   .todo-count{
     font-size: 1.5em;
     font-weight: bold;
@@ -58,7 +56,5 @@ $shadows-into-light: 'Shadows Into Light';
     cursor: pointer;
   }
 
-  .todo-list {
-    width: 150px;
-  }
+
 }
