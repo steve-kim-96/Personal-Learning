@@ -2,9 +2,9 @@
 // if the initial value is not set then values wont run through function
 
 const arrayObject = [
-  {x: 1},
-  {x: 2},
-  {x: 3}
+  { x: 1 },
+  { x: 2 },
+  { x: 3 }
 ]
 
 const sumArrayObject = arrayObject.reduce((acc, cv) => acc + cv.x, 0)
@@ -30,4 +30,33 @@ const nameCount = names.reduce((acc, cv) => {
   return acc
 }, {})
 
-console.log(nameCount)
+
+// grouping people by a particular property
+
+/* 
+The cv is the current person in the people array.
+The acc is an object and the property paramater becomes the new
+property inside the acc object.
+Each time the property doesn't exist inside the acc object it becomes an
+array, and each time the property does exist, the person object is pushed
+inside of that object.
+*/
+const people = [
+  { name: 'Alice', age: 21 },
+  { name: 'Max', age: 20 },
+  { name: 'Jane', age: 20 }
+];
+
+function groupByProp(arrObject, property) {
+  const grouped = people.reduce((acc, cv) => {
+    const key = cv[property]
+    if (!acc[key]) {
+      acc[key] = []
+    }
+    acc[key].push(cv)
+    return acc
+  }, {})
+  console.log(grouped)
+}
+
+groupByProp(people, 'age')
