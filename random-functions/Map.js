@@ -18,7 +18,6 @@ const mergeMap = {...testMap, testMap2}
 // In order to merge map have to use Map keyword
 const actualMergeMap = new Map([...testMap, ...testMap2])
 
-console.log(actualMergeMap)
 
 // In JavaScript you can alter the size of the original array???
 // You can alter the elements and also have any type of element in the array?
@@ -30,5 +29,3 @@ array.push(3)
 array.pop()
 array.splice(2, 1, 5)
 array.splice(2, 1, 'dos')
-
-console.log(array)
