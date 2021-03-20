@@ -9,6 +9,10 @@ const FragmentingExplanation = () => (
       but I've always asked myself from all those different group projects at
       EDA... Why so many divs we have???
     </p>
+    <h5>
+      Little side note... that high contrast theme though <span role="img" aria-label="smiley-heart">😍</span>
+    </h5>
+    <img src="/images/fragmenting.PNG" alt="fragmented code"/>
   </>
 );
 

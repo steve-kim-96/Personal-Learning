@@ -1,7 +1,7 @@
 import TodoList from './components/TodoList'
 import { v4 } from 'uuid'
 import './App.scss'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 const LOCAL_STORAGE_KEY = 'todoApp.todos'
 
@@ -12,7 +12,7 @@ type TodoObject = {
 }
 
 function App() {
-  const inputField = React.useRef() as React.MutableRefObject<HTMLInputElement>;
+  const inputField = useRef() as React.MutableRefObject<HTMLInputElement>;
   const [todos, setTodos] = useState<TodoObject[]>([])
   const uuid = v4()
 
