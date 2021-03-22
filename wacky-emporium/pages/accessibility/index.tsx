@@ -4,10 +4,15 @@ import AccessibleForms from "../../components/AccessibleForms";
 import SkipNavigation from "../../components/SkipNavigation";
 import Landmarks from "../../components/Landmarks"
 import ManageFocus from "../../components/ManageFocus";
-import React, { useRef } from "react";
+import React, { createRef } from "react";
 
 const Accessibility = () => {
-  const inputElement = useRef()
+  const inputElement = createRef() as React.MutableRefObject<HTMLInputElement>
+
+  function changeHandler (e: any) {
+    e.preventDefault()
+    inputElement.current.focus()
+  }
 
   return (
   <div className="container">
@@ -28,7 +33,7 @@ const Accessibility = () => {
       <Landmarks />
     </div>
     <div className="manage-focus">
-      <ManageFocus textInput={inputElement}/>
+      <ManageFocus textInput={inputElement} onChange={changeHandler}/>
     </div>
   </div>
   )
