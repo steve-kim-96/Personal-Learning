@@ -1,9 +1,10 @@
-import AccessibilityHeader from "../../components/AccessibilityHeader";
-import FragmentingExplanation from "../../components/FragmentingExplanation";
-import AccessibleForms from "../../components/AccessibleForms";
-import SkipNavigation from "../../components/SkipNavigation";
-import Landmarks from "../../components/Landmarks"
-import ManageFocus from "../../components/ManageFocus";
+import AccessibilityHeader from "../../components/Accessibility/AccessibilityHeader";
+import FragmentingExplanation from "../../components/Accessibility/FragmentingExplanation";
+import AccessibleForms from "../../components/Accessibility/AccessibleForms";
+import SkipNavigation from "../../components/Accessibility/SkipNavigation";
+import Landmarks from "../../components/Accessibility/Landmarks"
+import ManageFocus from "../../components/Accessibility/ManageFocus";
+import MousePointerEvent from "../../components/Accessibility/MousePointerEvent";
 import React, { createRef } from "react";
 
 const Accessibility = () => {
@@ -12,6 +13,10 @@ const Accessibility = () => {
   function changeHandler (e: any) {
     e.preventDefault()
     inputElement.current.focus()
+  }
+
+  function mousePointerHandler () {
+
   }
 
   return (
@@ -35,6 +40,7 @@ const Accessibility = () => {
     <div className="manage-focus">
       <ManageFocus textInput={inputElement} onChange={changeHandler}/>
     </div>
+      <MousePointerEvent clickHandler={mousePointerHandler}/>
   </div>
   )
 };

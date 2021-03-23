@@ -17,6 +17,12 @@ const ManageFocus = ({ textInput, onChange }: Props) => {
         unnecessary wondering and keeps the user alert and bothered with your
         website.
       </p>
+      <p>
+        <strong>
+          See how the box lights up when you're clicked onto it, which indicates
+          that you're about to type into that box? Focus baby~
+        </strong>
+      </p>
     </>
   );
 };
