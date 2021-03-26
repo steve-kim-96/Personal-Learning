@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 
 const AccessibleForms = () => (
-  <>
+  <div className="error-form">
     <form>
       <label htmlFor="namedInput">Name:</label>
       <input id="namedInput" type="text" name="name" required />
@@ -13,7 +13,7 @@ const AccessibleForms = () => (
       errors explicit so that users understand what's going on and what they
       need to do.
     </p>
-  </>
+  </div>
 );
 
 export default AccessibleForms;

@@ -1,7 +1,7 @@
 import React from "react";
 
 const AccessibilityHeader = () => (
-  <>
+  <div className="title-header">
     <h1>Because why not?</h1>
     <p>
       Going through the first part of the advanced guidelines in the React docs,
@@ -13,7 +13,7 @@ const AccessibilityHeader = () => (
       I'm not going to explain any concepts, that's not what this is for. I'm
       just applying everything I've learnt so far about accessibility.
     </p>
-  </>
+  </div>
 );
 
 export default AccessibilityHeader

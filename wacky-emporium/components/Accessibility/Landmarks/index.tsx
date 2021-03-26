@@ -1,7 +1,7 @@
 import React from "react";
 
 const Landmarks = () => (
-  <>
+  <div className="landmarks">
     <h3>Landmarks??? Like the Sky Tower?</h3>
     <p>
       NO! Not the Sky Tower silly. Landmarks refer to notable portions on the
@@ -15,7 +15,7 @@ const Landmarks = () => (
       The navigation itself is a landmark and it's referred to as a Banner. It's
       notable, and easily referrable.
     </p>
-  </>
+  </div>
 );
 
 export default Landmarks

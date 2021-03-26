@@ -1,7 +1,7 @@
 import React from "react";
 
 const FragmentingExplanation = () => (
-  <>
+  <div className="fragmenting">
     <h3>Fragmenting and a bit of code splitting</h3>
     <p>
       So, instead of returning divs inside of divs inside of divs, and so on,
@@ -13,7 +13,7 @@ const FragmentingExplanation = () => (
       Little side note... that high contrast theme though <span role="img" aria-label="smiley-heart">😍</span>
     </h5>
     <img src="/images/fragmenting.PNG" alt="fragmented code"/>
-  </>
+  </div>
 );
 
 export default FragmentingExplanation;

@@ -1,9 +1,12 @@
-import React from 'react';
+import CodeSplit from '../../components/CodeSplitting/CodeSplit'
+import Bundling from "../../components/CodeSplitting/Bundling";
+import React from "react";
 
 const CodeSplitting = () => (
   <div className="container">
-    Hello World
+    <Bundling />
+    <CodeSplit />
   </div>
-)
+);
 
-export default CodeSplitting
+export default CodeSplitting;

@@ -7,7 +7,7 @@ interface Props {
 
 const ManageFocus = ({ textInput, onChange }: Props) => {
   return (
-    <>
+    <div className="manage-focus">
       <h3>As Dwayne the Rock Johnson says... FOCUS!</h3>
       <input type="text" ref={textInput} onChange={onChange} />
       <p>
@@ -23,7 +23,7 @@ const ManageFocus = ({ textInput, onChange }: Props) => {
           that you're about to type into that box? Focus baby~
         </strong>
       </p>
-    </>
+    </div>
   );
 };
 
