@@ -21,23 +21,17 @@ export const counterSlice = createSlice({
     // ** each value is a function that modifies the state and automatically creates "draft states"
     // ** so that the original state is note mutated
     increment: state => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
+      state.value += 1
+    },
 
-      // ** What this mumbo jumbo is saying is that we don't need to worry 
-      // about creating clones of state because it automatically does it for us
-      state.value += 1;
-    },
     decrement: state => {
-      state.value -= 1;
+      state.value -= 1
     },
-    // Use the PayloadAction type to declare the contents of `action.payload`
-    // **Payload just means to say the information that is put in 
+
     incrementByAmount: (state, action: PayloadAction<number>) => {
-      state.value += action.payload;
-    },
+      state.value += action.payload
+    }
+
   },
 });
 
@@ -56,6 +50,7 @@ export const incrementAsync = (amount: number): AppThunk => dispatch => {
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
-export const selectCount = (state: RootState) => state.counter.value;
 
-export default counterSlice.reducer;
+export const selectCount = (state: RootState) => state.counter.value
+
+export default counterSlice.reducer
