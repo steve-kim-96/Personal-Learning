@@ -27,7 +27,7 @@ class LinkedList {
   }
   removeHead () {
     // start by assigning current Head to a variable to remove
-    const removedhead = this.head
+    const removedHead = this.head
     // if this.head is falsy then just break out of function. This would indicate that Head doesn't exist
     if (!removedHead) return
     // set the Head of the list to the next Node over. This would Leave the previous head orphaned and therefore out of the linked list

@@ -7,4 +7,6 @@ seasons.addToHead('winter')
 
 seasons.addToTail('spring')
 
+console.log(seasons.removeHead())
+
 seasons.printList()
