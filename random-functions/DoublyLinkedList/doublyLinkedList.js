@@ -38,5 +38,38 @@ class DoublyLinkedList {
     // if the head doesn't exist, meaning that the newTail is the only item in the list, set the head to be newTail
     if (!this.head) this.head  = newTail
   }
-
+  removeHead() {
+    const removedHead = this.head
+    if (!removedHead) return
+    this.head = removedHead.getNextNode()
+    if (this.head) {
+      this.head.setPreviousNode(null)
+    }
+    if (removedHead === this.tail) {
+      this.removeTail()
+    }
+    return removedHead
+  }
+  removeTail() {
+    const removedTail = this.tail
+    if (!removedTail) return
+    this.tail = removedTail.getPreviousNode()
+    if (this.tail) {
+      this.tail.setNextNode(null)
+    }
+    if (removedTail === this.head) {
+      this.removeHead()
+    }
+    return removedTail
+  }
+  printList() {
+    const currentNode = this.head
+    const output = '<head> '
+    while(currentNode) {
+      output += currentNode.data
+      currentNode = currentNode.getNextNode()
+    }
+    output += '<tail>'
+    console.log(output)
+  }
 }
