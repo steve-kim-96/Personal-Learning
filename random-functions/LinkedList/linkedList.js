@@ -2,9 +2,9 @@ const Node = require('./Node')
 
 class LinkedList {
   constructor() {
-  this.head = null
+    this.head = null
   }
-  addToHead (data) {
+  addToHead(data) {
     // start off by creating the new Node that's going to be new Head
     const newHead = new Node(data)
     // set a variable for the current head of linked list
@@ -16,16 +16,16 @@ class LinkedList {
       this.head.setNextNode(currentHead)
     }
   }
-  addToTail (data) {
+  addToTail(data) {
     // start the tail off at the Head node
     let tail = this.head
     // if there is no tail, there is no Head. In that case create a new Node
     if (!tail) this.head = new Node(data)
     // while the next Node exists i.e. is not null, set the tail to the next Node. It will stop once next value is null
-    while(tail.getNextNode() !== null) tail = tail.getNextNode()
+    while (tail.getNextNode() !== null) tail = tail.getNextNode()
     tail.setNextNode(new Node(data))
   }
-  removeHead () {
+  removeHead() {
     // start by assigning current Head to a variable to remove
     const removedHead = this.head
     // if this.head is falsy then just break out of function. This would indicate that Head doesn't exist
@@ -34,6 +34,7 @@ class LinkedList {
     this.head = removedHead.getNextNode()
     return removedHead.data
   }
+
   printList() {
     // start off at the head of the list
     let currentNode = this.head
