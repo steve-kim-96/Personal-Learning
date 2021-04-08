@@ -17,7 +17,7 @@ class Queue {
 
   enqueue(data) {
     if (this.hasRoom()) {
-      this.queue.addToTail()
+      this.queue.addToTail(data)
       this.size++
       return
     }
@@ -33,6 +33,8 @@ class Queue {
     throw new Error('Queue is empty!')
   }
 }
+
+module.exports = Queue
 
 /*
   Some things to watch for:
