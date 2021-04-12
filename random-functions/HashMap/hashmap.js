@@ -2,6 +2,8 @@ const LinkedList = require("../LinkedList/linkedList");
 const Node = require('../LinkedList/Node')
 class HashMap {
   constructor(size = 0) {
+    // the hashmap starts off as a new array with initially value null
+    // we then map through the array with each element being a new LinkedList
     this.hashmap = new Array(size)
       .fill(null)
       .map(() => new LinkedList())
@@ -58,7 +60,21 @@ class HashMap {
     return null
   }
 
-  
+  delete(key) {
+    const lowerCaseKey = key.toLowerCase()
+    const arrayIndex = this.hash(lowerCaseKey)
+    const current = this.hashmap[arrayIndex]
+    while(current) {
+      if (!current.next) {
+        console.log('no such value exists in this list')
+        return
+      }
+      if (current.data.key === key) {
+        
+      }
+      current = current.next
+    }
+  }
 }
 
 module.exports = HashMap
