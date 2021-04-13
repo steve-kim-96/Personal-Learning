@@ -34,6 +34,14 @@ class LinkedList {
     this.head = removedHead.getNextNode()
     return removedHead.data
   }
+  // doing a recursive search for a node
+  findNode(data, currentNode = this.head) {
+    // if no data exists just exit and return null
+    if (!this.head) return null
+    if (currentNode.data === data) return currentNode
+    return this.findNode(data, currentNode.next)
+    
+  }
 
   printList() {
     // start off at the head of the list
