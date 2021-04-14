@@ -1,18 +1,21 @@
-import Drag from './components/Drag'
-import DropTarget from './components/DropTarget'
+import Card from './components/Card'
+import Board from './components/Board'
 
 function App() {
-  function onItemDropped () {
-    console.log('item has been dropped')
-  }
   return (
     <div className='App'>
-      <Drag dataItem='item-1'>
-        <div>Something to be dragged</div>
-      </Drag>
-      <DropTarget onItemDropped={onItemDropped}>
-        <div>...</div>
-      </DropTarget>
+      <main className='flexbox'>
+        <Board id='board-1' className='board'>
+          <Card id='card-1' className='card' draggable='true'>
+            <p>Card One</p>
+          </Card>
+        </Board>
+        <Board id='board-2' className='board'>
+          <Card id='card-2' className='card' draggable='true'>
+            <p>Card Two</p>
+          </Card>
+        </Board>
+      </main>
     </div>
   )
 }
