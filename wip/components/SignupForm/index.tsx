@@ -33,7 +33,7 @@ function SignupForm() {
           type='password'
           {...register('password', {
             required: 'required',
-            minLength: { value: 8, message: 'Must at least be 8 characters' }
+            minLength: { value: 8, message: 'Must at least be 8 characters' },
           })}
         />
         {errors.password ? <div>{errors.password.message}</div> : null}
