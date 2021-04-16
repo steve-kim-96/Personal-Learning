@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import React from 'react'
 
@@ -38,6 +39,11 @@ function LoginForm() {
       </div>
       <div>
         <button type='submit'>Login</button>
+      </div>
+      <div>
+        <Link href='/signup'>
+          <a>Don't have an account?</a>
+        </Link>
       </div>
     </form>
   )

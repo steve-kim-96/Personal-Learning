@@ -1,4 +1,5 @@
-import { appendErrors, useForm } from 'react-hook-form'
+import Link from 'next/link'
+import { useForm } from 'react-hook-form'
 import React from 'react'
 
 interface FormData {
@@ -34,6 +35,14 @@ function SignupForm() {
           {...register('password', {
             required: 'required',
             minLength: { value: 8, message: 'Must at least be 8 characters' },
+            validate: value => {
+              return [
+                /[a-z]/,
+                /[A-Z]/,
+                /[0-9]/,
+                /[^a-zA-Z0-9]/
+              ].every(pattern => pattern.test(value)) || 'Must include lowercase, uppercase, number, and special characters' 
+            }
           })}
         />
         {errors.password ? <div>{errors.password.message}</div> : null}
@@ -45,6 +54,11 @@ function SignupForm() {
       </div>
       <div>
         <button type='submit'>Register</button>
+      </div>
+      <div>
+        <Link href='/login'>
+          <a>Already have an account?</a>
+        </Link>
       </div>
     </form>
   )
