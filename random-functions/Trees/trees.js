@@ -32,9 +32,28 @@ class TreeNode {
     }
     throw new Error('this child does not exist')
   }
-
+  //printing the tree in a pretty way
   print(level = 0) {
-
+    let result = ''
+    for (let i = 0; i < level; i++) {
+      result += '-- '
+    }
+    console.log(`${result}${this.data}`)
+    this.children.forEach(child => child.print(level + 1))
+  }
+  //depth first method of displaying TreeNode
+  depthFirstTraversal() {
+    console.log(this.data)
+    this.children.forEach(child => child.depthFirstTraversal())
+  }
+  //breadth first method of displaying TreeNode
+  breadthFirstTraversal() {
+    let queue = [this]
+    while(queue.length !== 0) {
+      current = queue.shift()
+      console.log(current.data)
+      queue = queue.concat(current.children)
+    }
   }
 }
 
