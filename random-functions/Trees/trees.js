@@ -57,4 +57,24 @@ class TreeNode {
   }
 }
 
-module.exports = TreeNode
+function binarySearch (arr, target) {
+  let left = 0
+  let right = arr.length
+
+  while(right > left) {
+    const indexToCheck = Math.floor((right + left) / 2)
+    const checking = arr[indexToCheck]
+
+    if (checking === target) return indexToCheck
+    if (checking > target) {
+      left = indexToCheck + 1
+    } else {
+      right = indexToCheck
+    }
+  }
+}
+
+module.exports = {
+  TreeNode,
+  binarySearch
+}
