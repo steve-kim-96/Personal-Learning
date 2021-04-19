@@ -11,6 +11,9 @@ function Navbar() {
         <Link href='/login'>
           <a className='nav-item'>Log In</a>
         </Link>
+        <Link href='dnd'>
+          <a>Drag and Drop</a>
+        </Link>
       </nav>
     </div>
   )
