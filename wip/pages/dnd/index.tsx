@@ -4,7 +4,11 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 import Box, { ObjectProp } from '../../components/DragNDrop/Box'
 import Drop from '../../components/DragNDrop/Drop'
 
-const cardContext = createContext({})
+export interface AppContextInterface {
+  (id: number) : void
+}
+
+export const cardContext = createContext<AppContextInterface | null>(null)
 
 
 function DND() {
@@ -18,20 +22,21 @@ function DND() {
 
   function markAsDone(id: number): void {
     const dragged = objects.filter(item => item.id === id)
-    dragged[0].status = 'done'
-    setObjects(objects.filter(object => object.id !== id).concat(dragged[0]))
+    console.log(id)
+    // dragged[0].status = 'done'
+    // setObjects(objects.filter(object => object.id !== id).concat(dragged[0]))
   }
 
 
   return (
     <cardContext.Provider value={markAsDone}>
       <DndProvider backend={HTML5Backend}>
-        <Box title={objects[0].title} />
+        <Box title={objects[0].title} id={objects[0].id}/>
         <Drop>
           {objects
             .filter(object => object.status === 'done')
             .map(object => (
-              <Box key={object.id} title={object.title} />
+              <Box key={object.id} title={object.title} id={object.id}/>
             ))}
         </Drop>
       </DndProvider>

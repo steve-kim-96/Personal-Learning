@@ -1,6 +1,6 @@
 import { ItemTypes } from '../Constants'
 import { useDrag } from 'react-dnd'
-import React, { useState } from 'react'
+import React from 'react'
 
 export interface ObjectProp {
   id?: number
@@ -8,9 +8,10 @@ export interface ObjectProp {
   status?: string
 }
 
-function Box({ title }: ObjectProp) {
+function Box({ title, id }: ObjectProp) {
   const [{ isDragging }, drag] = useDrag(() => ({
     type: ItemTypes.BOX,
+    id: id,
     collect: monitor => ({
       isDragging: !!monitor.isDragging(),
     }),

@@ -1,15 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useDrop } from 'react-dnd'
 import { ItemTypes } from '../Constants'
+import { cardContext } from '../../../pages/dnd'
 
 interface Props {
   children: JSX.Element[] | JSX.Element
 }
 
+export interface ItemProp {
+  id: number;
+  title: string;
+  status: string;
+}
+
 function Drop ({children}: Props) {
+  const markAsDone = useContext(cardContext) 
   const [{ isOver }, drop] = useDrop(() => ({
     accept: ItemTypes.BOX,
-    drop: () => alert('Drop Success'),
+    drop: (item: ItemProp, __) => markAsDone ? markAsDone(item.id) : null,
     collect: (monitor) => ({
       isOver: !!monitor.isOver()
     })
