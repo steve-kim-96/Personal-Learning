@@ -16,19 +16,18 @@ require("reflect-metadata");
 const express_1 = __importDefault(require("express"));
 require("dotenv-safe/config");
 const typeorm_1 = require("typeorm");
-const path_1 = __importDefault(require("path"));
 const Post_1 = require("./entities/Post");
 const port = 4000;
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     const connection = yield typeorm_1.createConnection({
         type: "postgres",
+        host: "localhost",
         database: "pern",
         port: 5432,
         username: "postgres",
         password: "Passw00rd12!",
         logging: true,
         synchronize: true,
-        migrations: [path_1.default.join(__dirname, "./migrations/*")],
         entities: [Post_1.Post],
     });
     const app = express_1.default();
