@@ -11,6 +11,7 @@ const main = async () => {
   const connection = await createConnection({
     type: "postgres",
     database: "pern",
+    port: 5432,
     username: "postgres",
     password: "Passw00rd12!",
     logging: true,
@@ -18,8 +19,6 @@ const main = async () => {
     migrations: [path.join(__dirname, "./migrations/*")],
     entities: [Post],
   });
-
-
 
   const app = express();
 
