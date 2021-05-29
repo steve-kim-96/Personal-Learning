@@ -21,11 +21,7 @@ const port = 4000;
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     const connection = yield typeorm_1.createConnection({
         type: "postgres",
-        host: "localhost",
-        database: "pern",
-        port: 5432,
-        username: "postgres",
-        password: "Passw00rd12!",
+        url: "postgres://postgres:Passw00rd12!@localhost/pern",
         logging: true,
         synchronize: true,
         entities: [Post_1.Post],
