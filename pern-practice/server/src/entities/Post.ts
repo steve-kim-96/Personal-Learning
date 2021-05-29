@@ -10,13 +10,13 @@ import {
 @Entity()
 export class Post extends BaseEntity {
   @PrimaryGeneratedColumn()
-  id: number;
+  id!: number;
 
   @Column()
-  title: string;
+  title!: string;
 
   @Column()
-  text: string;
+  text!: string;
 
   @CreateDateColumn()
   createdAt: Date;

@@ -10,14 +10,9 @@ const port = 4000;
 const main = async () => {
   const connection = await createConnection({
     type: "postgres",
-    host: "localhost",
-    database: "pern",
-    port: 5432,
-    username: "postgres",
-    password: "Passw00rd12!",
+    url: "postgres://postgres:Passw00rd12!@localhost/pern",
     logging: true,
     synchronize: true,
-    // migrations: [path.join(__dirname, "./migrations/*")],
     entities: [Post],
   });
 
