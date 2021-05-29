@@ -2,7 +2,7 @@ import "reflect-metadata";
 import express from "express";
 import "dotenv-safe/config";
 import { createConnection } from "typeorm";
-import path from "path";
+// import path from "path";
 import { Post } from "./entities/Post";
 
 const port = 4000;
@@ -10,13 +10,14 @@ const port = 4000;
 const main = async () => {
   const connection = await createConnection({
     type: "postgres",
+    host: "localhost",
     database: "pern",
     port: 5432,
     username: "postgres",
     password: "Passw00rd12!",
     logging: true,
     synchronize: true,
-    migrations: [path.join(__dirname, "./migrations/*")],
+    // migrations: [path.join(__dirname, "./migrations/*")],
     entities: [Post],
   });
 
