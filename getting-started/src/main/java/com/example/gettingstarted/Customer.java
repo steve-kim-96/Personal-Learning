@@ -1,4 +1,4 @@
-package com.example.gettingstarted.accessingdatajpa;
+package com.example.gettingstarted;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
