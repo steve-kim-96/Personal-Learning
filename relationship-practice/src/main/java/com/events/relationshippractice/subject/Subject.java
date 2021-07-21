@@ -1,10 +1,13 @@
 package com.events.relationshippractice.subject;
 
+import com.events.relationshippractice.student.Student;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -24,6 +27,14 @@ public class Subject {
             nullable = false
     )
     private String name;
+
+    @ManyToMany
+    @JoinTable(
+            name = "enrolled_students",
+            joinColumns = @JoinColumn(name = "subject_id"),
+            inverseJoinColumns = @JoinColumn(name = "student_id")
+    )
+    private Set<Student> enrolledStudents = new HashSet<>();
 
     @Override
     public String toString() {

@@ -9,16 +9,28 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "/subject")
 public class SubjectController {
-    @Autowired
-    SubjectRepository subjectRepository;
+    private final SubjectService subjectService;
 
+    @Autowired
+    public SubjectController(SubjectService subjectService) {
+        this.subjectService = subjectService;
+    }
     @GetMapping
-    List<Subject> getStudents() {
-        return subjectRepository.findAll();
+    List<Subject> getSubjects() {
+        return subjectService.getSubjects();
     }
 
     @PostMapping
-    Subject newStudent(@RequestBody Subject subject) {
-        return subjectRepository.save(subject);
+    Subject createSubject(@RequestBody Subject subject) {
+        return subjectService.createSubject(subject);
+    }
+
+    @PutMapping(path = "/{subjectId}/students/{studentId}")
+    Subject enrollStudentToSubject(
+            @PathVariable Long subjectId,
+            @PathVariable Long studentId
+    ) {
+         return subjectService.enrollStudentToSubject(subjectId, studentId);
+
     }
 }

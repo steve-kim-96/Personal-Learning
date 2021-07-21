@@ -8,16 +8,20 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "/student")
 public class StudentController {
-    @Autowired
-    StudentRepository studentRepository;
 
+    private final StudentService studentService;
+
+    @Autowired
+    public StudentController(StudentService studentService) {
+        this.studentService = studentService;
+    }
     @GetMapping
     List<Student> getStudents() {
-        return studentRepository.findAll();
+        return studentService.getStudents();
     }
 
     @PostMapping
     Student newStudent(@RequestBody Student student) {
-        return studentRepository.save(student);
+        return studentService.createStudent(student);
     }
 }
