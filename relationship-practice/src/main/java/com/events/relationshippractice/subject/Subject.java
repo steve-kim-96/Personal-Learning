@@ -36,6 +36,10 @@ public class Subject {
     )
     private Set<Student> enrolledStudents = new HashSet<>();
 
+    public void enrollStudent(Student student) {
+        enrolledStudents.add(student);
+    }
+
     @Override
     public String toString() {
         return "Subject{" +
